@@ -10,7 +10,7 @@ Run:
 
     tickle -list
 
-to get a list of available drivers.
+to get a list of available drivers, or just [check this page](https://ascottix.github.io/tickle/index.html).
 
 Specify a driver name to use it, for example:
 
@@ -63,14 +63,14 @@ TODO
 ## How to build on Raspberry Pi
 
 1. Install the prerequisite [SDL 2.0](https://www.libsdl.org) library:
-
-    sudo apt-get install libsdl2-2.0
-    sudo apt-get install libsdl2-dev
-
+```
+sudo apt-get install libsdl2-2.0
+sudo apt-get install libsdl2-dev
+```
 2. Run:
-
-    make -f Makefile.rpi
-
+```
+make -f Makefile.rpi
+```
 Executable is placed in the `obj` directory.
 
 ## How to build on Windows
@@ -91,7 +91,9 @@ Supported sound chips:
 * YM2149
 
 Supported arcades:
-| 1942 | 1942 |
+| Driver | Name |
+| --- | --- |
+| 1942 | 1942 | 
 | amidars | Amidar (on Scramble hardware) |
 | atlantis | Battle of Atlantis |
 | blkhole | Black Hole |
