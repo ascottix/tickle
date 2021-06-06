@@ -1,46 +1,135 @@
 # Tickle
 
-Tickle is an arcade machine emulator.
+Tickle is an arcade machine emulator that supports early classics.
 
-It supports about 40 machines including 1942, Frogger, Galaga, Galaxian, Moon Cresta, Nibbler, Pacman, Pengo, Pinball Action, Rally X, Scramble, Space Invaders, Vanguard and [many more](https://ascottix.github.io/tickle/index.html).
+## How to run
 
-Hardware:
-- 6502 CPU
-- 8080 CPU
-- Z80 CPU
-- AY-3-8910 Sound Generator
-- Namco Wave Sound Generator
-- SN76477 Complex Sound Generator
-- ... and **a lot** of custom hardware and discrete components!
+This version does not currently have a user interface (check Tickle 0.94 if you need one) so it must be used from the command line.
 
-## Notes on the source code
+Run:
 
-This version is a significant change in the project evolution, as it now uses the [Simple DirectMedia Layer (SDL) library](https://www.libsdl.org/) and no longer provides a native user interface for Windows and Mac OS X.
+    tickle -list
 
-Using the SDL allows the emulator to run on Linux and Raspbian, which was a main goal of this project (although it wasn't so easy to have it run smoothly on my ancient Raspberry Pi).
+to get a list of available drivers.
 
-Because of the consequent removal of native code, which provided a full featured user interface, the program is now missing the possibility of editing the DIP switch settings for the machines hardware. I will add this back in a portable way as soon as I find a chance to work on this project again. The previous version, which natively supports Windows and Mac OS X, is [archived here](https://github.com/ascottix/tickle094).
+Specify a driver name to use it, for example:
 
-Tickle has been compiled and tested on Windows, Linux, Mac OS X and Raspbian. Now this code is quite old and I don't think it will compile cleanly out of the box. However, I made a quick attempt on Windows using MinGW and it wasn't too difficult either. Added:
+    tickle invaders
 
-```
-export CC = x86_64-w64-mingw32-g++
-```
+Tickle expects the necessary ROMs to be placed in a subdirectory named `roms`. The ROM files are the same used in MAME.
 
-to the main Makefile, and changed:
+ROM files can also be placed in a zip file with the same name as the driver. This is in fact the preferred setup.
 
-```LD = $(CC)
-LDFLAGS = -Bstatic -lmingw32 
-LIBS = ../obj/machine.a ../obj/cpu.a ../obj/emu.a ../obj/sound.a ../obj/ase.a -lz -lSDL2main -lSDL2
+For example, when you run `tickle invaders` Tickle will try to read the required files from both `roms` and `roms/invaders.zip`.
 
-$(TICKLE): $(OBJECTS)
-	$(LD) $(LDFLAGS) $^ -o $@ $(LIBS)
-```
+### Run fullscreen
 
-in the sdl/Makefile.
+By default the program runs in a window. To run fullscreen just add the `-fs` option, for example:
+
+    tickle -fs invaders
+
+### Controls
+
+Tickle supports joysticks and gamepads. It also supports the following keys:
+
+| Key | Function |
+| --- | --- |
+| 0 | Service Mode |
+| 1 | Start Player 1 |
+| 2 | Start Player 2 |
+| 5 | Insert Coin 1 |
+| 6 | Insert Coin 2 |
+| A, D, W, S | Player 1 Movement |
+| J, L, I, K | Player 2 Movement |
+| Left Ctrl | Player 1 Action 1 |
+| Z | Player 1 Action 2 |
+| X | Player 1 Action 3 |
+| C | Player 1 Action 4 |
+| E | Player 2 Action 1 |
+| R | Player 2 Action 2 |
+| T | Player 2 Action 3 |
+| G | Player 2 Action 4 |
+
+Arrow keys work as well for movement of Player 1.
+
+## How to build on Linux
+
+TODO
+
+## How to build on macOS
+
+TODO
+
+## How to build on Raspberry Pi
+
+1. Install the prerequisite [SDL 2.0](https://www.libsdl.org) library:
+
+    sudo apt-get install libsdl2-2.0
+    sudo apt-get install libsdl2-dev
+
+2. Run:
+
+    make -f Makefile.rpi
+
+Executable is placed in the `obj` directory.
+
+## How to build on Windows
+
+TODO
+
+## Emulation
+
+Supported CPUs:
+* 6502
+* 8080
+* Z80
+
+Supported sound chips:
+* AY-3-8910
+* Namco WSG3
+* SN76477
+* YM2149
+
+Supported arcades:
+| 1942 | 1942 |
+| amidars | Amidar (on Scramble hardware) |
+| atlantis | Battle of Atlantis |
+| blkhole | Black Hole |
+| crush | Crush Roller |
+| eyes | Eyes |
+| fantasyu | Fantasy (US version) |
+| frogger | Frogger |
+| galaga | Galaga |
+| galaxian | Galaxian |
+| gteikoku | Gingateikoku No Gyakushu |
+| jumpshot | Jump Shot |
+| lrescue | Lunar Rescue |
+| maketrax | Make Trax |
+| mars | Mars |
+| mooncrst | Moon Cresta |
+| mspacman | Ms. Pacman |
+| nrallyx | New Rally X |
+| nibbler | Nibbler |
+| ozmawars | Ozma Wars |
+| pacman | Pacman |
+| pacplus | Pacman Plus |
+| pengo2u | Pengo | set 2 not encrypted | |
+| pbaction | Pinball Action |
+| pooyan | Pooyan |
+| puckman | Puckman |
+| rallyx | Rally X |
+| rollingc | Rolling Crash / Moon Base |
+| scramble | Scramble |
+| spaceat2 | Space Attack II |
+| invaders | Space Invaders |
+| invaddlx | Space Invaders Deluxe |
+| invadpt2 | Space Invaders Part II |
+| theend | The End |
+| uniwars | UniWar S |
+| vanguard | Vanguard |
+| warofbug | War of the Bugs |
 
 ## License
 
-Tickle was previously released with a GPL license. It's now using a MIT license.
+Tickle is released under the MIT license, see LICENSE file.
 
-See LICENSE file.
