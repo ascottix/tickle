@@ -205,14 +205,14 @@ TZipFile::TZipFile( FILE * f )
         // Read variable-length name
         char * name = new char [ 1+name_len ];
         if( fread( name, 1, name_len, f_ ) != name_len ) {
-            delete name;
+            delete [] name;
             break;
         }
         name[name_len] = '\0';
 
         // Skip extra field
         if( extra_len && fseek( f_, extra_len, SEEK_CUR ) != 0 ) {
-            delete name;
+            delete [] name;
             break;
         }
 

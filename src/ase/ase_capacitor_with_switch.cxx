@@ -5,7 +5,6 @@
 */
 #include "ase_capacitor_with_switch.h"
 
-const AFloat InputOnThreshold   = 1.0;
 const AFloat ControlOnThreshold = 1.0;
 
 ACapacitorWithSwitch ::ACapacitorWithSwitch( AChannel & input, AChannel & control, AFloat cr, AFloat dr, AFloat c )

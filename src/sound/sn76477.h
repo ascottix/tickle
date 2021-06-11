@@ -265,7 +265,6 @@ private:
     int vco_select_;
     unsigned mixer_;
     int envelope_;
-    int volume_;
     unsigned update_flags_;
     unsigned sampling_rate_;
 

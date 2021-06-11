@@ -44,15 +44,12 @@ private:
     unsigned        compr_type_;
     unsigned        filter_type_;
     unsigned        lace_type_;
-    unsigned        crc_;
-    unsigned        scanline_size_;
     unsigned char * old_scanline_;
     unsigned char * cur_scanline_;
     unsigned        cur_scanline_offset_;
     unsigned        cur_scanline_index_;
     unsigned        cur_lace_pass_;
     unsigned        cur_bytes_line_;
-    unsigned        max_color_index_;
     z_stream        zs_;
 };
 

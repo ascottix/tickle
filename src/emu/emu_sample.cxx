@@ -119,7 +119,7 @@ TSample * TSample::createFromWave( TInputStream * is )
                     }
                 }
 
-                delete samples;
+                delete [] samples;
 
                 break;
             }
