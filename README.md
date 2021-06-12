@@ -34,7 +34,7 @@ Tickle supports joysticks and gamepads. It also supports the following keys:
 
 | Key | Function |
 | --- | --- |
-| 0 | Service Mode |
+| 0 | Service |
 | 1 | Start Player 1 |
 | 2 | Start Player 2 |
 | 5 | Insert Coin 1 |
@@ -57,7 +57,6 @@ Arrow keys work as well for movement of Player 1.
 TODO
 
 ## How to build on macOS
-
 
 1. If necessary, install Xcode Command Line Developer Tools:
 ```
@@ -112,45 +111,46 @@ Supported sound chips:
 * YM2149
 
 Supported arcades:
-| Driver | Name |
-| --- | --- |
-| 1942 | 1942 | 
-| amidars | Amidar (on Scramble hardware) |
-| atlantis | Battle of Atlantis |
-| blkhole | Black Hole |
-| crush | Crush Roller |
-| eyes | Eyes |
-| fantasyu | Fantasy (US version) |
-| frogger | Frogger |
-| galaga | Galaga |
-| galaxian | Galaxian |
-| gteikoku | Gingateikoku No Gyakushu |
-| jumpshot | Jump Shot |
-| lrescue | Lunar Rescue |
-| maketrax | Make Trax |
-| mars | Mars |
-| mooncrst | Moon Cresta |
-| mspacman | Ms. Pacman |
-| nrallyx | New Rally X |
-| nibbler | Nibbler |
-| ozmawars | Ozma Wars |
-| pacman | Pacman |
-| pacplus | Pacman Plus |
-| pengo2u | Pengo | set 2 not encrypted | |
-| pbaction | Pinball Action |
-| pooyan | Pooyan |
-| puckman | Puckman |
-| rallyx | Rally X |
-| rollingc | Rolling Crash / Moon Base |
-| scramble | Scramble |
-| spaceat2 | Space Attack II |
-| invaders | Space Invaders |
-| invaddlx | Space Invaders Deluxe |
-| invadpt2 | Space Invaders Part II |
-| theend | The End |
-| uniwars | UniWar S |
-| vanguard | Vanguard |
-| warofbug | War of the Bugs |
+| Driver | Name | Year | Manufacturer | Required resources |
+| --- | --- | --- | --- | --- |
+| 1942 | 1942 | 1984 | Taito | 1942.zip |
+| amidars | Amidar (on Scramble hardware) | 1982 | Konami | amidars.zip, amidar.zip, scramble.zip |
+| atlantis | Battle of Atlantis | 1981 | Comsoft | atlantis.zip, scramble.zip |
+| blkhole | Black Hole | 1981 | TDS | blkhole.zip, galaxian.zip |
+| crush | Crush Roller | 1981 | Kural Samno Electric | crush.zip, puckman.zip |
+| eyes | Eyes | 1982 | Rock-Ola | eyes.zip, puckman.zip |
+| fantasyu | Fantasy (US) | 1981 | Rock-Ola | fantasyu.zip, fantasy.zip, nibbler.zip |
+| frogger | Frogger | 1981 | Konami | frogger.zip |
+| galaga | Galaga | 1981 | Namco | galaga.zip |
+| galaxian | Galaxian | 1979 | Namco | galaxian.zip |
+| gteikoku | Gingateikoku No Gyakushu | 1980 | Irem | gteikoku.zip, uniwars.zip, galaxian.zip |
+| jumpshot | Jump Shot | 1985 | Bally Midway | jumpshot.zip, puckman.zip |
+| lrescue | Lunar Rescue | 1979 | Taito | lrescue.zip, invaders.zip |
+| maketrax | Make Trax | 1981 | Williams Electronics | maketrax.zip, crush.zip, puckman.zip |
+| mars | Mars | 1981 | Artic | mars.zip, scramble.zip |
+| mooncrst | Moon Cresta | 1980 | Nichibutsu | mooncrst.zip, galaxian.zip |
+| mspacman | Ms. Pacman | 1981 | Midway | mspacman.zip, pacman.zip, puckman.zip |
+| nrallyx | New Rally X | 1981 | Namco | nrallyx.zip, rallyx.zip |
+| nibbler | Nibbler | 1982 | Rock-Ola | nibbler.zip |
+| ozmawars | Ozma Wars | 1979 | SNK | ozmawars.zip, invaders.zip |
+| pacman | Pacman | 1980 | Midway | pacman.zip, puckman.zip |
+| pacplus | Pacman Plus | 1982 | Midway | pacplus.zip, puckman.zip |
+| pengo2u | Pengo (set 2 not encrypted) | 1982 | Sega | pengo2u.zip, pengo.zip |
+| pbaction | Pinball Action | 1985 | Tehkan | pbaction.zip |
+| pooyan | Pooyan | 1982 | Konami | pooyan.zip |
+| puckman | Puckman | 1980 | Namco | puckman.zip |
+| rallyx | Rally X | 1980 | Namco | rallyx.zip |
+| rebound | Rebound [IN PROGRESS] | 1974 | Atari | rebound.zip |
+| rollingc | Rolling Crash / Moon Base | 1979 | Nichibutsu | rollingc.zip, invaders.zip |
+| scramble | Scramble | 1981 | Konami | scramble.zip |
+| spaceat2 | Space Attack II | 1980 | Zenitone-Microsec LTD | spaceat2.zip, invaders.zip |
+| invaders | Space Invaders | 1979 | Taito | invaders.zip |
+| invaddlx | Space Invaders Deluxe | 1979 | Midway | invaddlx.zip, invadpt2.zip, invaders.zip |
+| invadpt2 | Space Invaders Part II | 1979 | Taito | invadpt2.zip, invaders.zip |
+| theend | The End | 1980 | Konami | theend.zip, scramble.zip |
+| uniwars | UniWar S | 1980 | Irem | uniwars.zip, galaxian.zip |
+| vanguard | Vanguard | 1981 | SNK | vanguard.zip |
+| warofbug | War of the Bugs | 1981 | Armenia | warofbug.zip, galaxian.zip |
 
 ## License
 
