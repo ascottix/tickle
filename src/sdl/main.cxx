@@ -302,6 +302,7 @@ int main(int argc, char** argv) {
     
     // Setup emulator
     inputManager.add( SDLK_LCTRL, idKeyP1Action1 );
+    inputManager.add( SDLK_SPACE, idKeyP1Action1 );
     inputManager.add( SDLK_z, idKeyP1Action2 ); // Z
     inputManager.add( SDLK_x, idKeyP1Action3 ); // X
     inputManager.add( SDLK_c, idKeyP1Action4 ); // C

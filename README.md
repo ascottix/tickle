@@ -42,6 +42,7 @@ Tickle supports joysticks and gamepads. It also supports the following keys:
 | A, D, W, S | Player 1 Movement |
 | J, L, I, K | Player 2 Movement |
 | Left Ctrl | Player 1 Action 1 |
+| Space | Player 1 Action 1 |
 | Z | Player 1 Action 2 |
 | X | Player 1 Action 3 |
 | C | Player 1 Action 4 |
