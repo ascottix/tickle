@@ -141,7 +141,6 @@ Supported arcades:
 | pooyan | Pooyan | 1982 | Konami | pooyan.zip |
 | puckman | Puckman | 1980 | Namco | puckman.zip |
 | rallyx | Rally X | 1980 | Namco | rallyx.zip |
-| rebound | Rebound [IN PROGRESS] | 1974 | Atari | rebound.zip |
 | rollingc | Rolling Crash / Moon Base | 1979 | Nichibutsu | rollingc.zip, invaders.zip |
 | scramble | Scramble | 1981 | Konami | scramble.zip |
 | spaceat2 | Space Attack II | 1980 | Zenitone-Microsec LTD | spaceat2.zip, invaders.zip |
