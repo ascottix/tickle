@@ -7,12 +7,10 @@ PLAIN_OBJECTS = \
 OBJECTS = $(addprefix $(OBJDIR),$(PLAIN_OBJECTS))
 
 LD = $(CC)
-LDFLAGS = -Bstatic `sdl2-config --cflags --libs` 
-# LDFLAGS = -Bstatic -L/usr/x86_64-w64-mingw32/sys-root/mingw/lib
-# LDFLAGS = -Bstatic -lmingw32 
+LD_FLAGS = -Bstatic `sdl2-config --libs` 
 LIBS = $(OBJDIR)../machine.a $(OBJDIR)../cpu.a $(OBJDIR)../emu.a $(OBJDIR)../sound.a $(OBJDIR)../ase.a -lz -lm -lstdc++ -lSDL2main -lSDL2
 
-CC_FLAGS += `sdl2-config --cflags --libs` -I..
+CC_FLAGS += `sdl2-config --cflags` -I..
 
 $(OBJDIR)%.o : %.cxx
 	$(CC) $(CC_FLAGS) -c $< -o $@
@@ -22,4 +20,4 @@ TICKLE = $(OBJDIR)../tickle
 target: $(TICKLE)
 
 $(TICKLE): $(OBJECTS)
-	$(LD) $(LDFLAGS) $^ -o $@ $(LIBS)
+	$(LD) $(LD_FLAGS) $^ -o $@ $(LIBS)

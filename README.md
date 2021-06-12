@@ -58,7 +58,28 @@ TODO
 
 ## How to build on macOS
 
-TODO
+
+1. If necessary, install Xcode Command Line Developer Tools:
+```
+xcode-select --install
+```
+If the command line tools are missing, compilation will fail with errors like:
+```
+xcrun: error: invalid active developer path
+```
+
+2. Install the prerequisite [SDL 2.0](https://www.libsdl.org) library with [Homebrew](https://brew.sh/):
+```
+brew install sdl2
+```
+
+Note: SDL's official image for macOS creates a different configuration and will not work with Tickle.
+
+3. Run:
+```
+make -f Makefile.rpi
+```
+Executable is placed in the `obj` directory.
 
 ## How to build on Raspberry Pi
 

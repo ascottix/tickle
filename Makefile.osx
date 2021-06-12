@@ -1,0 +1,16 @@
+export AR = ar
+export CC = gcc
+export CC_FLAGS = -Wall -fno-rtti -fno-exceptions -O2
+export MKDIR = mkdir -p
+
+export OBJDIR = obj
+TICKLE = tickle
+
+all: $(OBJDIR)/$(TICKLE)
+	$(MKDIR) $(OBJDIR)
+	$(MAKE) -C src
+
+clean:
+	rm -fR $(OBJDIR)
+
+.PHONY: all $(OBJDIR)/$(TICKLE)

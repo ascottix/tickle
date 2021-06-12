@@ -68,7 +68,7 @@ unsigned char * loadFileFromStream( TInputStream * is, unsigned size, TCRC32 * c
         crc->update( result, size );
     }
     else {
-        delete result;
+        delete [] result;
         result = 0;
     }
     
