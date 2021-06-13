@@ -4,6 +4,8 @@
 
     Copyright (c) 2014 Alessandro Scotti
 */
+#include <stdio.h>
+
 #include "sdl_frame.h"
 
 SDLFrame::SDLFrame( SDL_Renderer * rend, unsigned sampleCount ) {

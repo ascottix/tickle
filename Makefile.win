@@ -1,0 +1,24 @@
+SDL_HOME = c:/SDL2-2.0.14
+
+SDL_HOME_64 = $(SDL_HOME)/x86_64-w64-mingw32
+
+export AR = ar
+export CC = gcc
+export CC_FLAGS = -Wall -fno-rtti -fno-exceptions -O2
+export MKDIR = mkdir -p
+export SDL_CFLAGS = -I$(SDL_HOME_64)/include -Dmain=SDL_main
+export SDL_LIBS = -L$(SDL_HOME_64)/lib -lmingw32 -lSDL2main -lSDL2 -mwindows
+
+export OBJDIR = obj
+
+TICKLE = tickle
+
+all: $(OBJDIR)/$(TICKLE)
+	$(MKDIR) $(OBJDIR)
+	$(MAKE) -C src
+	cp $(SDL_HOME)/bin/SDL2.dll $(OBJDIR)
+
+clean:
+	rm -fR $(OBJDIR)
+
+.PHONY: all $(OBJDIR)/$(TICKLE)

@@ -96,7 +96,36 @@ Executable is placed in the `obj` directory.
 
 ## How to build on Windows
 
-TODO
+1. Install [Git for Windows](https://gitforwindows.org/).
+
+Actually the only required component is Git Bash, but they come all bundled together.
+
+2. Install the prerequisite MinGW-w64 toolchain from the [SourceForge website](https://sourceforge.net/projects/mingw-w64/).
+
+A detailed list of installation steps is explained in the guide [Using GCC with MinGW](https://code.visualstudio.com/docs/cpp/config-mingw). Steps 1 and 2 can be skipped.
+
+Another very good guide is [How to Setup SDL2 on Windows for C/C++](https://www.matsson.com/prog/sdl2-mingw-w64-tutorial.php). It covers both MinGW and SDL 2, which is another prerequisite.
+
+3. Install the prerequisite [SDL 2.0](https://www.libsdl.org) library:
+- go to the [SDL 2.0 download page](https://www.libsdl.org/download-2.0.php) and download the SDL 2.0 MinGW archive in the Development Libraries section
+- extract the downloaded archive to a proper directory (`tar` is installed by MinGW in the previous step but it's also possible to use an unarchiver like 7-Zip), for example:
+```
+tar -xf C:\Downloads\SDL2-devel-2.0.14-mingw.tar.gz -C c:\
+```
+Take note of the destination folder, in the above example it would be `c:\SDL2-2.0.14`.
+
+4. Open Makefile.win with a text editor and update the `SDL_HOME` variable with the correct value from the previous step. Make sure to replace backslash characters `\` with forward slashes `/`. For example:
+```
+SDL_HOME = c:/SDL2-2.0.14
+```
+
+5. **From a Git Bash shell** run:
+```
+mingw32-make -f Makefile.win
+```
+Executable is placed in the `obj` directory.
+
+Note: executable depends on `SDL2.dll`. This library is copied inside `obj` during the build. Make sure to copy both `tickle.exe` and `SDL2.dll` if you want to run the program from another directory.
 
 ## Emulation
 

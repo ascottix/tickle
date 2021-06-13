@@ -7,10 +7,10 @@ PLAIN_OBJECTS = \
 OBJECTS = $(addprefix $(OBJDIR),$(PLAIN_OBJECTS))
 
 LD = $(CC)
-LD_FLAGS = -Bstatic `sdl2-config --libs` 
-LIBS = $(OBJDIR)../machine.a $(OBJDIR)../cpu.a $(OBJDIR)../emu.a $(OBJDIR)../sound.a $(OBJDIR)../ase.a -lz -lm -lstdc++ -lSDL2main -lSDL2
+LD_FLAGS = -Bstatic $(SDL_LIBS)
+LIBS = $(OBJDIR)../machine.a $(OBJDIR)../cpu.a $(OBJDIR)../emu.a $(OBJDIR)../sound.a $(OBJDIR)../ase.a -lz -lm -lstdc++ -lSDL2 -lSDL2main
 
-CC_FLAGS += `sdl2-config --cflags` -I..
+CC_FLAGS += $(SDL_CFLAGS) -I..
 
 $(OBJDIR)%.o : %.cxx
 	$(CC) $(CC_FLAGS) -c $< -o $@

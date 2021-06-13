@@ -2,8 +2,11 @@ export AR = ar
 export CC = gcc
 export CC_FLAGS = -Wall -fno-rtti -fno-exceptions -O2 -static-libgcc
 export MKDIR = mkdir -p
+export SDL_CFLAGS = `sdl2-config --cflags`
+export SDL_LIBS = `sdl2-config --libs`
 
 export OBJDIR = obj
+
 TICKLE = tickle
 
 all: $(OBJDIR)/$(TICKLE)
