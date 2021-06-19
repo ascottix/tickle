@@ -203,4 +203,3 @@ Supported arcades:
 ## License
 
 Tickle is released under the MIT license, see LICENSE file.
-
