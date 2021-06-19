@@ -1,6 +1,6 @@
 # Tickle
 
-Tickle is an arcade machine emulator that supports early classics.
+Tickle is a multi-platform arcade machine emulator that supports early classics.
 
 ## How to run
 
@@ -55,7 +55,26 @@ Arrow keys work as well for movement of Player 1.
 
 ## How to build on Linux
 
-TODO
+1. Install the prerequisite [SDL 2.0](https://www.libsdl.org) library:
+```
+sudo apt-get update
+sudo apt-get install libsdl2-2.0
+sudo apt-get install libsdl2-dev
+```
+
+This should work on Debian, Ubuntu and several other distributions. If it doesn't, check the SDL Wiki on [Installing SDL](https://wiki.libsdl.org/Installation).
+
+2. If necessary, install the development tools:
+```
+sudo apt-get install build-essential
+```
+
+3. Run:
+```
+make -f Makefile.rpi
+```
+
+Executable is placed in the `obj` directory.
 
 ## How to build on macOS
 
@@ -79,6 +98,7 @@ Note: SDL's official image for macOS creates a different configuration and will 
 ```
 make -f Makefile.rpi
 ```
+
 Executable is placed in the `obj` directory.
 
 ## How to build on Raspberry Pi
@@ -114,7 +134,7 @@ tar -xf C:\Downloads\SDL2-devel-2.0.14-mingw.tar.gz -C c:\
 ```
 Take note of the destination folder, in the above example it would be `c:\SDL2-2.0.14`.
 
-4. Open Makefile.win with a text editor and update the `SDL_HOME` variable with the correct value from the previous step. Make sure to replace backslash characters `\` with forward slashes `/`. For example:
+4. Open `Makefile.win` with a text editor and update the `SDL_HOME` variable with the correct value from the previous step. Make sure to replace backslash characters `\` with forward slashes `/`. For example:
 ```
 SDL_HOME = c:/SDL2-2.0.14
 ```
