@@ -43,7 +43,7 @@ TSample * TSample::createFromWave( TInputStream * is )
 
     if( isFourCC( header+0, "RIFF" ) && isFourCC( header+8, "WAVE" ) ) {
         unsigned sampling_rate = 0;
-        unsigned block_align;
+        unsigned block_align = 0;
 
         while( 1 ) {
             // Read the chunk header

@@ -127,8 +127,9 @@ unsigned TZipFileInflaterStream::read( void * buf, unsigned len )
             }
 
             // Break on error
-            if( zerr_ != Z_OK )
+            if( zerr_ != Z_OK ) {
                 break;
+            }
 
             // Expand data
             zerr_ = ::inflate( &zs_, Z_NO_FLUSH );
@@ -187,12 +188,14 @@ TZipFile::TZipFile( FILE * f )
         }
 
         // Read rest of header
-        if( fread( header+4, sizeof(header)-4, 1, f_ ) != 1 )
+        if( fread( header+4, sizeof(header)-4, 1, f_ ) != 1 ) {
             break;
+        }
 
         // Verify signature
-        if( header[0] != 0x50 || header[1] != 0x4B || header[2] != 0x03 || header[3] != 0x04 )
+        if( header[0] != 0x50 || header[1] != 0x4B || header[2] != 0x03 || header[3] != 0x04 ) {
             break;
+        }
 
         // Local header seems ok, get fields
         int method = (int)( (unsigned)header[8] + 256*(unsigned)header[9] );
@@ -222,8 +225,9 @@ TZipFile::TZipFile( FILE * f )
         entries_.add( e );
 
         // Skip compressed data
-        if( fseek( f_, csize, SEEK_CUR ) != 0 )
-            break;            
+        if( fseek( f_, csize, SEEK_CUR ) != 0 ) {
+            break;
+        }
     }
 }
 
