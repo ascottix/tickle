@@ -42,7 +42,6 @@ Tickle supports joysticks and gamepads. It also supports the following keys:
 | A, D, W, S | Player 1 Movement |
 | J, L, I, K | Player 2 Movement |
 | Left Ctrl | Player 1 Action 1 |
-| Space | Player 1 Action 1 |
 | Z | Player 1 Action 2 |
 | X | Player 1 Action 3 |
 | C | Player 1 Action 4 |
@@ -51,7 +50,7 @@ Tickle supports joysticks and gamepads. It also supports the following keys:
 | T | Player 2 Action 3 |
 | G | Player 2 Action 4 |
 
-Arrow keys work as well for movement of Player 1.
+Additionally, Player 1 can use the arrow keys for movement and the spacebar as the main action key.
 
 ## How to build on Linux
 
